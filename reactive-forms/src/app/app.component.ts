@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   topics = ['Angular','Spring Boot','Java'];
+  registerForrm=new FormGroup({
+    username:new FormControl("Kishor"),
+    Password:new FormControl("hello"),
+    confirmpassword:new FormControl("hello")
+  });
 }
