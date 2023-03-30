@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,32 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
   topics = ['Angular','Spring Boot','Java'];
-  registerForrm=new FormGroup({
-    username:new FormControl("Kishor"),
-    Password:new FormControl("hello"),
-    confirmpassword:new FormControl("hello"),
-    Address: new FormGroup({
-      city: new FormControl("korutla"),
-      State: new FormControl(''),
-      postalcode: new FormControl('')
+  constructor(private fb:FormBuilder){}
+
+  registerForrm=this.fb.group(
+    {
+      username:['Arun'],
+      Password:["hello"],
+      confirmpassword:["hello"],
+      Address: this.fb.group({
+      city: ["korutla"],
+      State: [''],  
+      postalcode:['']
+      })
     })
-  });
+  
+  // registerForrm=new FormGroup({
+  //   username:new FormControl("Kishor"),
+  //   Password:new FormControl("hello"),
+  //   confirmpassword:new FormControl("hello"),
+  //   Address: new FormGroup({
+  //     city: new FormControl("korutla"),
+  //     State: new FormControl(''),
+  //     postalcode: new FormControl('')
+  //   })
+  // });
+
+
 
   onload(){
     // this.registerForrm.setValue( //it use to set all the fields in the form group, if not it rais an error
