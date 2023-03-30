@@ -33,8 +33,11 @@
       </div>
   </div>
     <div class="form-group">
-    <button type="submit"  class="btn btn-primary">Login</button>       
+    <button type="submit"  class="btn btn-primary">Login</button>   
+    <button type="submit"  (click)="onload()" class="btn btn-primary ml-3">Load Api data</button>       
+    
     </div>
+  
 </form>
 {{registerForrm.value|json}}
 

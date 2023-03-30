@@ -18,4 +18,30 @@ export class AppComponent {
       postalcode: new FormControl('')
     })
   });
+
+  onload(){
+    // this.registerForrm.setValue( //it use to set all the fields in the form group, if not it rais an error
+    //   {
+    //     username:"Pavan Kalayan",
+    //     Password:"hello",
+    //     confirmpassword:"hello",
+    //     Address:{
+    //       city:"Korutla",
+    //       State:"Telangana",
+    //       postalcode:"500083"
+    //     }
+    //   }
+    // )
+    this.registerForrm.patchValue( //This helps in loading only specified fields in the form group
+    {
+      username:"Pavan Kalayan",
+      Password:"",
+      confirmpassword:"",
+      Address:{
+        city:"Korutla",
+        State:"Telangana",
+      }
+    }
+  )
+  }
 }
